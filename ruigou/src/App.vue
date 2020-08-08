@@ -6,7 +6,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>睿购商城</b></span>
+      <span class="logo-lg"><b>OA管理系统</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -32,52 +32,36 @@
           <img src="./assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>凯斯柯达</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> 注销</a>
+          <p>管理员</p>
+          <router-link to="/login"><i class="fa fa-circle text-success"></i>登录</router-link>
         </div>
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">系统功能选择</li>
         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>首页</span>
+          <router-link to="/department">
+            <i class="fa fa-dashboard"></i> <span>部门管理</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
+          </router-link>
         </li>
         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>收藏商品</span>
+          <router-link to="/employee">
+            <i class="fa fa-dashboard"></i> <span>员工管理</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
+          </router-link>
         </li>
         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>购物车</span>
+          <router-link to="/behave">
+            <i class="fa fa-dashboard"></i> <span>爱好管理</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>订单</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>物流</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
+          </router-link>
         </li>
       </ul>
     </section>
@@ -95,9 +79,9 @@
         <small>子功能</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
+        <li><router-link to="/"><i class="fa fa-dashboard"></i> 首页</router-link></li>
+        <li><a href="#"></a></li>
+        <li class="active"></li>
       </ol>
     </section>
 
@@ -107,7 +91,7 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-body">
-          主显示区
+          <router-view></router-view>
         </div>
       </div>
       <!-- /.box -->

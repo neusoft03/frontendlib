@@ -2,7 +2,7 @@
   <!-- Default box -->
   <div class="box">
 	<div class="box-header with-border">
-	  <h3 class="box-title">部门信息</h3>
+	  <h3 class="box-title">删除购物车商品</h3>
 
 	  <div class="box-tools pull-right">
 		<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -34,7 +34,7 @@
 
 <script>
 	export default{
-		name:"DepartmentView",
+		name:"CartView",
 		data:function(){
 			return {};
 		}

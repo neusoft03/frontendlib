@@ -2,7 +2,7 @@
   <!-- Default box -->
   <div class="box">
 	<div class="box-header with-border">
-	  <h3 class="box-title">部门管理</h3>
+	  <h3 class="box-title">我的订单</h3>
 	</div>
 	<div class="box-body">
 		  <table class="table table-bordered">
@@ -36,7 +36,7 @@
 
 <script>
 	export default{
-		name:"DepartmentMain",
+		name:"OrderMain",
 		data:function(){
 			return {};
 		}

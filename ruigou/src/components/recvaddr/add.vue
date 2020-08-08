@@ -2,7 +2,7 @@
   <!-- Default box -->
   <div class="box">
 	<div class="box-header with-border">
-	  <h3 class="box-title">增加员工</h3>
+	  <h3 class="box-title">增加收货地址</h3>
 
 	</div>
 	<div class="box-body">
@@ -27,7 +27,7 @@
 
 <script>
 	export default{
-		name:"EmployeeAdd",
+		name:"RecvaddrAdd",
 		data:function(){
 			return {};
 		}

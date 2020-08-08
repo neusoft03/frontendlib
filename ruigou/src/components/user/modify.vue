@@ -2,7 +2,7 @@
   <!-- Default box -->
   <div class="box">
 	<div class="box-header with-border">
-	  <h3 class="box-title">部门信息</h3>
+	  <h3 class="box-title">修改用户信息</h3>
 
 	  <div class="box-tools pull-right">
 		<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -13,17 +13,19 @@
 	  </div>
 	</div>
 	<div class="box-body">
-		  <form>
+		  <form action="modify.mvc" method="post">
 			  <div class="form-group">
 				<label for="exampleInputEmail1">部门编码</label>
-				<span>${dm.code }</span>
+				<input type="text" class="form-control" name="code" value="${dm.code}">
 				
 			  </div>
 			  <div class="form-group">
 				<label for="exampleInputPassword1">部门的名称</label>
-				<span>${dm.code }</span>
+				<input type="text" class="form-control" name="name" value="${dm.name}">
 			  </div>
-			  <a href="tolist.mvc" class="btn btn-default">返回</a>
+			  <button type="submit" class="btn btn-primary">提交</button>
+			  <a href="tolist.mvc" class="btn btn-default">取消</a>
+			  <input type="hidden" name="no" value="${dm.no}" />
 		  </form>
 	</div>
 	<!-- /.box-body -->
@@ -34,7 +36,7 @@
 
 <script>
 	export default{
-		name:"DepartmentView",
+		name:"UserModify",
 		data:function(){
 			return {};
 		}

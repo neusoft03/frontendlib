@@ -2,7 +2,7 @@
   <!-- Default box -->
   <div class="box">
 	<div class="box-header with-border">
-	  <h3 class="box-title">增加部门</h3>
+	  <h3 class="box-title">增加爱好</h3>
 
 	</div>
 	<div class="box-body">

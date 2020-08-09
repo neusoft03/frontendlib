@@ -15,15 +15,15 @@
 	<div class="box-body">
 		  <form>
 			  <div class="form-group">
-				<label for="exampleInputEmail1">部门编码</label>
-				<span>${dm.code }</span>
+				<label for="exampleInputEmail1">部门编码:</label>
+				<span>	{{department.code}}</span>
 				
 			  </div>
 			  <div class="form-group">
-				<label for="exampleInputPassword1">部门的名称</label>
-				<span>${dm.code }</span>
+				<label for="exampleInputPassword1">部门的名称:</label>
+				<span>	{{department.name}}</span>
 			  </div>
-			  <a href="tolist.mvc" class="btn btn-default">返回</a>
+			  <router-link to="/department/list" class="btn btn-default">返回</router-link>
 		  </form>
 	</div>
 	<!-- /.box-body -->
@@ -33,10 +33,34 @@
 </template>
 
 <script>
+	import axios from "axios";
 	export default{
 		name:"DepartmentView",
 		data:function(){
-			return {};
+			return {
+				department:{
+					no:0,
+					code:"",
+					name:""
+				}
+			};
+		},
+		created() {
+			let departmentNO=this.$route.params.no;
+			console.log(departmentNO);
+			this.getDepartment(departmentNO);
+		},
+		methods:{
+			getDepartment:function(no){
+				axios.get("http://localhost:8200/department/get?no="+no).then(result=>{
+					if(result.data.status=="OK"){
+						this.department=result.data.result;
+					}
+					else{
+						alert(result.data.message);
+					}
+				});
+			}
 		}
 	}
 </script>

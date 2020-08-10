@@ -35,7 +35,7 @@
 </template>
 
 <script>
-	import axios from "axios";
+	//import axios from "axios";
 	export default{
 		name:"DepartmentModify",
 		data:function(){
@@ -53,12 +53,12 @@
 		},
 		methods:{
 			getDepartment:function(no){
-				axios.get("http://localhost:8200/department/get?no="+no).then(result=>{
+				this.axiosJSON.get("department/get?no="+no).then(result=>{
 					this.department=result.data.result;
 				});
 			},
 			modify:function(){
-				axios.post("http://localhost:8200/department/modify",this.department).then(result=>{
+				this.axiosJSON.post("department/modify",this.department).then(result=>{
 					alert(result.data.message);
 					if(result.data.status=="OK"){
 						this.$router.push("/department/list");//编程方式跳转并替换当前组件

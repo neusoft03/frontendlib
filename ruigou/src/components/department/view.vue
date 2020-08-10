@@ -33,7 +33,7 @@
 </template>
 
 <script>
-	import axios from "axios";
+	//import axios from "axios";
 	export default{
 		name:"DepartmentView",
 		data:function(){
@@ -45,14 +45,19 @@
 				}
 			};
 		},
+		props:{
+			no:{required:true}
+		},
 		created() {
-			let departmentNO=this.$route.params.no;
-			console.log(departmentNO);
-			this.getDepartment(departmentNO);
+			this.getDepartment();
 		},
 		methods:{
-			getDepartment:function(no){
-				axios.get("http://localhost:8200/department/get?no="+no).then(result=>{
+			getDepartment:function(){
+				this.axiosJSON.get("department/get",{
+					params:{
+						no:this.no
+					}
+				}).then(result=>{
 					if(result.data.status=="OK"){
 						this.department=result.data.result;
 					}

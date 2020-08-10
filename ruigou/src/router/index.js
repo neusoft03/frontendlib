@@ -29,7 +29,7 @@ const routes = [
 			{path:"list",name:"departmentlist",component:DepartmentList},
 			{path:"add",name:"departmentadd",component:DepartmentAdd},
 			{path:"modify/:no",name:"departmentmodify",component:DepartmentModify},
-			{path:"view/:no",name:"departmentview",component:DepartmentView},
+			{path:"view/:no",name:"departmentview",component:DepartmentView,props:true},
 			{path:"",redirect:"list"}
 		]
 	},

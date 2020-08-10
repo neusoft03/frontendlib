@@ -50,7 +50,7 @@
 <script>
 	//import axios from "axios"
 	export default{
-		name:"EmployeeList",
+		name:"BehaveList",
 		data:function(){
 			return {
 				departmentList:[],

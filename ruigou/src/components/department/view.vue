@@ -45,6 +45,9 @@
 				}
 			};
 		},
+		//这是通过转发而得到的参数
+		//这也是组件的对象的属性，可直接用this.xx的方式访问
+		//这样就不用通过this.$route.param.xxx来获取携带的参数了
 		props:{
 			no:{required:true}
 		},

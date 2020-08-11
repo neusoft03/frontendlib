@@ -48,6 +48,7 @@
 			};
 		},
 		created() {
+			this.$parent.$parent.subTitle="修改员工";
 			let departmentNo=this.$route.params.no;
 			this.getDepartment(departmentNo);
 		},

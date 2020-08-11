@@ -106,6 +106,7 @@
 			};
 		},
 		created(){
+			this.$parent.$parent.subTitle="员工列表";
 			this.getDepartmentList();
 			this.getListByCondition();
 		},

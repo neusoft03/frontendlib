@@ -77,8 +77,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        系统主页
-        <small>子功能</small>
+        {{mainTitle}}
+        <small>{{subTitle}}</small>
       </h1>
       <ol class="breadcrumb">
         <li><router-link to="/"><i class="fa fa-dashboard"></i> 首页</router-link></li>
@@ -313,7 +313,8 @@
 		name:"App",
 		data(){
 			return {
-				
+				mainTitle:"系统主页",
+				subTitle:"欢迎界面"
 			};
 		},
 		computed:{

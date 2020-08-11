@@ -105,7 +105,8 @@
 				required:true
 			}
 		},
-		created(){			
+		created(){
+			this.$parent.$parent.subTitle="查看员工";
 			this.getEmployee();
 		},
 		methods:{

@@ -53,6 +53,7 @@
 		},
 		created() {
 			this.getDepartment();
+			this.$parent.$parent.subTitle="查看部门";
 		},
 		methods:{
 			getDepartment:function(){

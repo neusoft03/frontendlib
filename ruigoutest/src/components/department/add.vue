@@ -38,6 +38,9 @@
 				}
 			};
 		},
+		created() {
+			this.$parent.$parent.subTitle="增加部门";
+		},
 		methods:{
 			add:function(){
 				this.axiosJSON.post("department/add",this.department).then(result=>{

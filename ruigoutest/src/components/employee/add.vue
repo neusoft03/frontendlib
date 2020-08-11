@@ -101,6 +101,7 @@
 			};
 		},
 		created(){
+			this.$parent.$parent.subTitle="增加员工";
 			this.getDepartmentList();
 			this.getBehaveList();
 		},

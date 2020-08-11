@@ -10,6 +10,9 @@
 		name:"DepartmentMain",
 		data:function(){
 			return {};
+		},
+		created(){
+			this.$parent.mainTitle="部门管理";
 		}
 	}
 </script>

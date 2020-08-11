@@ -62,6 +62,7 @@
 		},
 		created(){
 			this.getList();
+			this.$parent.$parent.subTitle="部门列表";
 		},
 		methods:{
 			getList:function(){

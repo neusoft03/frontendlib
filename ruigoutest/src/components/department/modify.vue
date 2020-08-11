@@ -50,6 +50,7 @@
 		created() {
 			let departmentNo=this.$route.params.no;
 			this.getDepartment(departmentNo);
+			this.$parent.$parent.subTitle="修改部门";
 		},
 		methods:{
 			getDepartment:function(no){

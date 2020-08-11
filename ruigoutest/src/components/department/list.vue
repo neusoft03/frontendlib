@@ -55,7 +55,7 @@
 			return {
 				departmentList:[],
 				page:1,
-				rows:3,
+				rows:5,
 				count:0,
 				pageCount:0
 			};

@@ -4,6 +4,33 @@
 		<div class="box-header with-border">
 		  <h3 class="box-title">员工管理</h3>
 		</div>
+		<div class="row">
+			<div clas="col-md-12">
+				<form>
+				  <div class="form-row">
+				    <div class="form-group col-md-3">
+				      <label for="inputEmail4">部门</label>
+				      <select class="form-control" v-model="departmentNo" v-on:change="getListByCondition" >
+						  <option value="0">所有部门</option>
+						  <option v-for="dm in departmentList" v-bind:key="dm.no" v-bind:value="dm.no">{{dm.name}}</option>
+					  </select>
+				    </div>
+				    <div class="form-group col-md-3">
+				      <label for="inputPassword4">入职开始日期</label>
+				      <input type="date" class="form-control" v-model="startDate" v-on:change="getListByCondition">
+				    </div>
+					<div class="form-group col-md-3">
+					  <label for="inputPassword4">入职截止日期</label>
+					  <input type="date" class="form-control" v-model="endDate" v-on:change="getListByCondition">
+					</div>
+					<div class="form-group col-md-3">
+					  <label for="inputPassword4">姓名检索</label>
+					  <input type="text" class="form-control" v-model="nameKey" v-on:change="getListByCondition">
+					</div>
+				  </div>
+				</form>
+			</div>
+		</div>
 		<div class="box-body">
 			  <table class="table table-bordered">
 			  <thead>
@@ -40,14 +67,14 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				个数:<span></span>	页数:<span></span>/<span></span>
+				个数:<span>{{count}}</span>	页数:<span>{{page}}</span>/<span>{{pageCount}}</span>
 			</div>
 			<nav>
 				<ul class="pagination justify-content-end">
-					<li class="page-item"><a class="page-link" href="#">首页</a></li>
-					<li class="page-item"><a class="page-link" href="#">上页</a></li>
-					<li class="page-item"><a class="page-link" href="#">下页</a></li>
-					<li class="page-item"><a class="page-link" href="#">末页</a></li>
+					<li class="page-item"><a class="page-link" href="#" v-on:click="toFirstPage()">首页</a></li>
+					<li class="page-item"><a class="page-link" href="#" v-on:click="toPreviousPage()">上页</a></li>
+					<li class="page-item"><a class="page-link" href="#" v-on:click="toNextPage()">下页</a></li>
+					<li class="page-item"><a class="page-link" href="#" v-on:click="toLastPage()">末页</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -67,7 +94,7 @@
 				departmentList:[],
 				count:0,
 				pageCount:0,			
-				rows:6,
+				rows:3,
 				page:1,
 				departmentNo:0,
 				lowAge:0,
@@ -120,12 +147,17 @@
 					this.page--;
 					this.getListByCondition();
 				}
-				
+				else{
+					alert("已经是第1页了");
+				}
 			},
 			toNextPage(){
 				if(this.page<this.pageCount){
 					this.page++;
 					this.getListByCondition();
+				}
+				else{
+					alert("已经是最后一页了");
 				}
 			},
 			toLastPage(){
